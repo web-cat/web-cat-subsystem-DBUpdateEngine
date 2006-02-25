@@ -165,7 +165,7 @@ public final class UpdateEngine
             latestVersion++;
             while ( updates.applyUpdateIncrement( latestVersion ) )
             {
-                log.info( "updated " + name + "to v." + latestVersion );
+                log.info( "updated " + name + " to v." + latestVersion );
                 database.setVersionNumber( name, latestVersion );
                 latestVersion++;
             }
