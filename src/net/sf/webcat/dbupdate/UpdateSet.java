@@ -158,7 +158,7 @@ public abstract class UpdateSet
             {
                 log.info( "applying " + subsystemName()
                           + " database update " + version );
-                update.invoke( this, null );
+                update.invoke( this, (Object[])null );
                 result = true;
             }
             catch ( Exception e )
@@ -198,7 +198,7 @@ public abstract class UpdateSet
         try
         {
             return this.getClass().getMethod( "updateIncrement" + version,
-                                              null );
+                                              (Class[])null );
         }
         catch ( Exception e )
         {

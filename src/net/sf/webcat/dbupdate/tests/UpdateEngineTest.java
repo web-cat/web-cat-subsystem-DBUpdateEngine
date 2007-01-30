@@ -169,6 +169,7 @@ public class UpdateEngineTest
             }
         }
 
+        @SuppressWarnings( "unchecked" )
         public void setVersionNumber( String subsystemName, int aVersionNumber )
             throws SQLException
         {
