@@ -34,7 +34,7 @@ import org.apache.log4j.Logger;
 /**
  * A default implementation of the {@link Database} interface that works
  * for MySQL (and some others).  If this concrete subclass doesn't work
- * for you, consider subclassing it and overridding whatever is necessary.
+ * for you, consider subclassing it and overriding whatever is necessary.
  *
  * @author  Stephen Edwards
  * @version $Id$
