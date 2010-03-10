@@ -21,6 +21,7 @@
 
 package net.sf.webcat.dbupdate;
 
+import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 // -------------------------------------------------------------------------
@@ -105,7 +106,6 @@ public final class UpdateEngine
             else {
                 waitUntilDBUnlocked( updates.subsystemName() );
             }
-            log.info("updates for " + updates.subsystemName() + " successful" );
         }
         catch ( RuntimeException e )
         {
@@ -183,22 +183,38 @@ public final class UpdateEngine
     }
 
 
-    protected void waitUntilDBUnlocked( String subsystemName )
+    protected void waitUntilDBUnlocked(String subsystemName)
     {
+        int waitCount = 0;
         do
         {
-            log.info( "waiting while another application instance "
-                      + "performs DB updates" );
+            log.info("waiting while another application instance "
+                     + "performs DB updates");
             try
             {
-                Thread.sleep( 5 * 1000 );
+                Thread.sleep(5 * 1000);
             }
-            catch ( InterruptedException exception )
+            catch (InterruptedException exception)
             {
                 // do nothing
             }
+            waitCount++;
         }
-        while ( database().isLocked( subsystemName ) );
+        while (database().isLocked(subsystemName) && waitCount <= WAIT_LIMIT);
+        if (database().isLocked(subsystemName))
+        {
+            // Give up and try to forcibly unlock, assuming that
+            // the original lock holder is dead
+            try
+            {
+                database().unlock(subsystemName);
+            }
+            catch (SQLException e)
+            {
+                log.error(
+                    "Unable to remove stale lock for " + subsystemName, e);
+            }
+        }
     }
 
 
@@ -206,6 +222,8 @@ public final class UpdateEngine
 
     private Database database;
     private static UpdateEngine engine;
+
+    private static final int WAIT_LIMIT = 6;
 
     static Logger log = Logger.getLogger( UpdateEngine.class );
 }
