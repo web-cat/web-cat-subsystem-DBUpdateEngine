@@ -19,12 +19,12 @@
  |  along with Web-CAT; if not, see <http://www.gnu.org/licenses/>.
 \*==========================================================================*/
 
-package net.sf.webcat.dbupdate.tests;
+package org.webcat.dbupdate.tests;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import net.sf.webcat.dbupdate.*;
+import org.webcat.dbupdate.*;
 
 // -------------------------------------------------------------------------
 /**

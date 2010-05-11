@@ -19,7 +19,7 @@
  |  along with Web-CAT; if not, see <http://www.gnu.org/licenses/>.
 \*==========================================================================*/
 
-package net.sf.webcat.dbupdate;
+package org.webcat.dbupdate;
 
 import java.lang.reflect.Method;
 import java.sql.*;
