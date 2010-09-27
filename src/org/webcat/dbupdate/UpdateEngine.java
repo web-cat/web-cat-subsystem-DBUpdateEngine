@@ -43,7 +43,8 @@ import org.apache.log4j.Logger;
  * with some additional redesign work.
  *
  * @author Stephen Edwards
- * @version $Id$
+ * @author  Last changed by $Author$
+ * @version $Revision$, $Date$
  */
 public final class UpdateEngine
 {

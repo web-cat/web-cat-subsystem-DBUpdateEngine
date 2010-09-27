@@ -43,7 +43,8 @@ import org.apache.log4j.Logger;
  * in sequence.
  *
  * @author Stephen Edwards
- * @version $Id$
+ * @author  Last changed by $Author$
+ * @version $Revision$, $Date$
  */
 public abstract class UpdateSet
 {

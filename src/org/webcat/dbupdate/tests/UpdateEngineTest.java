@@ -33,7 +33,8 @@ import org.webcat.dbupdate.*;
  * A simple test class to try out the basic methods of {@link UpdateEngine}.
  *
  * @author  Stephen Edwards
- * @version $Id$
+ * @author  Last changed by $Author$
+ * @version $Revision$, $Date$
  */
 public class UpdateEngineTest
     extends junit.framework.TestCase

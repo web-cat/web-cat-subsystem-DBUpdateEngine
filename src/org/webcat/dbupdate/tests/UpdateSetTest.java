@@ -31,7 +31,8 @@ import org.webcat.dbupdate.*;
  * A simple test class to try out the basic methods of {@link UpdateSet}.
  *
  * @author  Stephen Edwards
- * @version $Id$
+ * @author  Last changed by $Author$
+ * @version $Revision$, $Date$
  */
 public class UpdateSetTest
     extends junit.framework.TestCase

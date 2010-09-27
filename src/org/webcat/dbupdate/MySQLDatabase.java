@@ -37,7 +37,8 @@ import org.apache.log4j.Logger;
  * for you, consider subclassing it and overriding whatever is necessary.
  *
  * @author  Stephen Edwards
- * @version $Id$
+ * @author  Last changed by $Author$
+ * @version $Revision$, $Date$
  */
 public class MySQLDatabase
     implements Database

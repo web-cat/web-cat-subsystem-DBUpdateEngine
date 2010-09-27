@@ -32,7 +32,8 @@ import java.util.Properties;
  * driver for the {@link UpdateEngine}.
  *
  * @author  Stephen Edwards
- * @version $Id$
+ * @author  Last changed by $Author$
+ * @version $Revision$, $Date$
  */
 public interface Database
 {
